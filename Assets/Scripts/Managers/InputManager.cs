@@ -8,18 +8,26 @@ public class InputManager : MonoBehaviour
     // Singleton for easy ref in other scripts.
     public static InputManager instance;
 
-    // Player input ref.
+    // Player input ref. Creates a single instance for other scripts to reference.
     public static PlayerInput playerInput;
 
     // Input action values that will be called in other scripts to utilize the inputs.
     public Vector2 moveInput { get; private set; }
     public bool jumpInput { get; private set; }
     public bool attackInput { get; private set; }
+    public bool pauseInput { get; private set; }
+    
+    // UI input.
+    public bool resumeInputUI { get; private set; }
 
     // Input actions in the controls action map.
     private InputAction moveAction;
     private InputAction jumpAction;
     private InputAction attackAction;
+    private InputAction pauseAction;
+
+    // Input actions in the UI action map.
+    private InputAction resumeActionUI;
 
     private void Awake()
     {
@@ -46,6 +54,8 @@ public class InputManager : MonoBehaviour
         moveAction = playerInput.actions["Move"];
         jumpAction = playerInput.actions["Jump"];
         attackAction = playerInput.actions["Attack"];
+        pauseAction = playerInput.actions["Pause"];
+        resumeActionUI = playerInput.actions["Resume"];
     }
 
     // Constantly update the values of the input actions.
@@ -56,6 +66,8 @@ public class InputManager : MonoBehaviour
         // Triggered is the same thing as WasPressedThisFrame().
         jumpInput = jumpAction.triggered;
         attackInput = attackAction.triggered;
+        pauseInput = pauseAction.triggered;
+        resumeInputUI = resumeActionUI.triggered;
     }
 
 
