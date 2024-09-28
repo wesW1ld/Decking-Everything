@@ -24,10 +24,14 @@ public class Movement : MonoBehaviour
     private float jumpBufferTime = 1.15f; // Time before hitting the ground that the player can jump.
     private float jumpBufferCounter;
 
+    //knight sprite
+    private GameObject knight;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        knight = GameObject.Find("Knight");
     }
 
     // Update is called once per frame
@@ -37,7 +41,7 @@ public class Movement : MonoBehaviour
 
         //player jumping using raycast
         Debug.DrawRay(rayStart, Vector2.down * groundCheckDistance, Color.red); //draws a ray in the scene view for debugging
-        rayStart = new Vector2(transform.position.x, transform.position.y - 0.5f);
+        rayStart = new Vector2(transform.position.x, transform.position.y - 1f);
         isGrounded = Physics2D.Raycast(rayStart, Vector2.down, groundCheckDistance, groundLayer);
 
         // Function that applies coyote time and a jump buffer to the player's jump.
@@ -47,6 +51,16 @@ public class Movement : MonoBehaviour
     //FixedUpdate is called at a fixed interval and is used for physics calculations
     private void FixedUpdate() 
     {
+        //sprite movement
+        if(horizontalMove < 0)
+        {
+            knight.transform.localScale = new Vector3(.5f, .5f, 1f);
+        }
+        else if(horizontalMove > 0)
+        {
+            knight.transform.localScale = new Vector3(-.5f, .5f, 1f);
+        }
+
         ///player movement
         rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
 
