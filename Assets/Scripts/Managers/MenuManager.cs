@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -38,6 +40,22 @@ public class MenuManager : MonoBehaviour
     {
         PauseManager.instance.ResumeGame();
         ClosePauseMenu();
+    }
+
+    // Load the main menu.
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+
+        // If in the editor, stop playing the editor application.
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 
     private void OpenPauseMenu()
