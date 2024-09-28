@@ -21,7 +21,7 @@ public class Movement : MonoBehaviour
     [Header("Jump QoL")]
     private float coyoteTime = 0.15f; // Time player has to jump after falling off a platform.
     private float coyoteTimeCounter;
-    private float jumpBufferTime = 1.15f; // Time before hitting the ground that the player can jump.
+    private float jumpBufferTime = 0.15f; // Time before hitting the ground that the player can jump.
     private float jumpBufferCounter;
 
     // Start is called before the first frame update
@@ -42,6 +42,9 @@ public class Movement : MonoBehaviour
 
         // Function that applies coyote time and a jump buffer to the player's jump.
         CoyoteTimeAndBuffer();
+
+        //JUMP!!!
+        Jump();
     }
 
     //FixedUpdate is called at a fixed interval and is used for physics calculations
@@ -59,9 +62,6 @@ public class Movement : MonoBehaviour
 
         ///player movement
         rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
-
-        //JUMP!!!
-        Jump();
     }
 
     private void Jump()
@@ -69,7 +69,7 @@ public class Movement : MonoBehaviour
         // As long as the coyote timer and jump buffer are greater than 0, the player can jump.
         if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
         {
-            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             coyoteTimeCounter = 0f;
             jumpBufferCounter = 0f;
         }
