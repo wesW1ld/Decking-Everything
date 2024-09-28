@@ -24,14 +24,10 @@ public class Movement : MonoBehaviour
     private float jumpBufferTime = 1.15f; // Time before hitting the ground that the player can jump.
     private float jumpBufferCounter;
 
-    //knight sprite
-    private GameObject knight;
-
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        knight = GameObject.Find("Knight");
     }
 
     // Update is called once per frame
@@ -54,11 +50,11 @@ public class Movement : MonoBehaviour
         //sprite movement
         if(horizontalMove < 0)
         {
-            knight.transform.localScale = new Vector3(.5f, .5f, 1f);
+            transform.localScale = new Vector3(.5f, .5f, 1f);
         }
         else if(horizontalMove > 0)
         {
-            knight.transform.localScale = new Vector3(-.5f, .5f, 1f);
+            transform.localScale = new Vector3(-.5f, .5f, 1f);
         }
 
         ///player movement

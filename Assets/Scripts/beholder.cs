@@ -4,25 +4,40 @@ using UnityEngine;
 
 public class beholder : MonoBehaviour
 {
-    //public float speed; //can be changed in unity editor
-    private Rigidbody2D rb;
-
     private GameObject player;
 
     //eye to shoot out of
-    private GameObject eye;
+    private Transform firepoint;
 
     //shooting
     public float lazerDuration = 1f;
-    LineRenderer lazer;
+    private LineRenderer lazer;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        // Initialize firepoint
+        firepoint = transform.Find("firepoint1");
+        if (firepoint == null)
+        {
+            Debug.LogError("Firepoint1 not found as a child of the GameObject.");
+        }
+
+        // Initialize player
         player = GameObject.FindWithTag("Player");
+        if (player == null)
+        {
+            Debug.LogError("Player GameObject with tag 'Player' not found in the scene.");
+        }
+
+        // Initialize lazer
         lazer = GetComponent<LineRenderer>();
-        eye = transform.Find("eye1").gameObject;
+        if (lazer == null)
+        {
+            Debug.LogError("LineRenderer component not found on the GameObject.");
+        }
+
+        lazer.positionCount = 2;
     }
 
     // Update is called once per frame
@@ -31,23 +46,29 @@ public class beholder : MonoBehaviour
         if(Input.GetButtonDown("Fire1"))
         {
             Debug.Log("Fire1 pressed");
-            Shoot();
+            lazer.SetPosition(0, new Vector3(firepoint.position.x, firepoint.position.y, -3));
+            lazer.SetPosition(1, new Vector3(player.transform.position.x, player.transform.position.y, -3));
+            StartCoroutine(LazerShoot(lazerDuration));
         }
     }
 
-    public void Shoot()
-    {
-        Vector2 direction = player.transform.position - eye.transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(eye.transform.position, direction, 100f);
-        lazer.SetPosition(0, eye.transform.position);
-        lazer.SetPosition(1, hit.point);
-        StartCoroutine(lazerShoot(lazerDuration));
-    }
-
-    IEnumerator lazerShoot(float seconds)
+    IEnumerator LazerShoot(float seconds)
     {
         lazer.enabled = true;
         yield return new WaitForSeconds(lazerDuration);
         lazer.enabled = false;
     }
+
+    // void ShootLazer()
+    // {
+    //         RaycastHit2D hit = Physics2D.Raycast(firepoint.position, player.transform.position - firepoint.position);
+    //         Draw2DRay(hit.point);
+    //         StartCoroutine(LazerShoot(lazerDuration));
+    // }
+
+    // void Draw2DRay(Vector2 end)
+    // {
+    //     lazer.SetPosition(0, firepoint.position);
+    //     lazer.SetPosition(1, end);
+    // }
 }
