@@ -12,6 +12,7 @@ public class beholder : MonoBehaviour
     //shooting
     public float lazerDuration = 1f;
     private LineRenderer lazer;
+    public float shootDelay = 3f;
 
     // Start is called before the first frame update
     void Start()
@@ -38,37 +39,30 @@ public class beholder : MonoBehaviour
         }
 
         lazer.positionCount = 2;
+
+        StartCoroutine(AttackPlayer());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetButtonDown("Fire1"))
-        {
-            Debug.Log("Fire1 pressed");
-            lazer.SetPosition(0, new Vector3(firepoint.position.x, firepoint.position.y, -3));
-            lazer.SetPosition(1, new Vector3(player.transform.position.x, player.transform.position.y, -3));
-            StartCoroutine(LazerShoot(lazerDuration));
-        }
-    }
-
-    IEnumerator LazerShoot(float seconds)
+    IEnumerator LazerOn()
     {
         lazer.enabled = true;
-        yield return new WaitForSeconds(lazerDuration);
+        yield return new WaitForSeconds(lazerDuration / 2);
+        lazer.startColor = Color.red;
+        lazer.endColor = Color.red;
+        yield return new WaitForSeconds(lazerDuration / 2);
         lazer.enabled = false;
+        lazer.startColor = Color.white;
+        lazer.endColor = Color.white;
     }
 
-    // void ShootLazer()
-    // {
-    //         RaycastHit2D hit = Physics2D.Raycast(firepoint.position, player.transform.position - firepoint.position);
-    //         Draw2DRay(hit.point);
-    //         StartCoroutine(LazerShoot(lazerDuration));
-    // }
-
-    // void Draw2DRay(Vector2 end)
-    // {
-    //     lazer.SetPosition(0, firepoint.position);
-    //     lazer.SetPosition(1, end);
-    // }
+    IEnumerator AttackPlayer()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(shootDelay);
+            lazer.SetPosition(0, new Vector3(firepoint.position.x, firepoint.position.y, -3));
+            lazer.SetPosition(1, new Vector3(player.transform.position.x, player.transform.position.y, -3));
+            StartCoroutine(LazerOn());
+        }
+    }
 }
