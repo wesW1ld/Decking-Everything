@@ -79,6 +79,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lazerDuration: 1
   shootDelay: 3
+  radious: 0.5
+  prefabHitbox: {fileID: 4482258775935948379, guid: 6e4e2a7c591775e4cb32e239836ca279, type: 3}
 --- !u!114 &2925662408506711354
 MonoBehaviour:
   m_ObjectHideFlags: 0

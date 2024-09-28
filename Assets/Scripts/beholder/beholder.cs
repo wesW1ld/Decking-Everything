@@ -14,6 +14,14 @@ public class beholder : MonoBehaviour
     private LineRenderer lazer;
     public float shootDelay = 3f;
 
+    //hitbox of line
+    GameObject hitbox;
+    public float width = .5f;
+    Vector2 startpoint;
+    Vector2 endpoint;
+    public GameObject prefabHitbox;
+    CapsuleCollider2D capsuleCollider;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,15 +48,50 @@ public class beholder : MonoBehaviour
 
         lazer.positionCount = 2;
 
+        //initialize hitbox
+        hitbox = Instantiate(prefabHitbox, transform.position, Quaternion.identity);
+        //get collider from child
+        capsuleCollider = hitbox.GetComponentInChildren<CapsuleCollider2D>();
+        if (capsuleCollider == null)
+        {
+            Debug.LogError("CapsuleCollider component not found on the GameObject's child.");
+        }
+
         StartCoroutine(AttackPlayer());
+    }
+
+    void Update() 
+    {
+        if(lazer.startColor == Color.white)
+        {
+            lazer.SetPosition(0, new Vector3(firepoint.position.x, firepoint.position.y, -3));
+            hitbox.transform.position = transform.position;
+            capsuleCollider.size = new Vector2(0, 0);
+        }
     }
 
     IEnumerator LazerOn()
     {
+        //laser
         lazer.enabled = true;
         yield return new WaitForSeconds(lazerDuration / 2);
         lazer.startColor = Color.red;
         lazer.endColor = Color.red;
+
+        //hitbox
+        startpoint = lazer.GetPosition(0);
+        endpoint = lazer.GetPosition(1);
+        hitbox.transform.position = (endpoint + startpoint) / 2;
+
+        float distance = Vector2.Distance(new Vector2(startpoint.x, startpoint.y), new Vector2(endpoint.x, endpoint.y));
+        capsuleCollider.size = new Vector2(distance, width);
+        capsuleCollider.direction = CapsuleDirection2D.Horizontal;
+
+        Vector3 direction = endpoint - startpoint;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        hitbox.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        //laser
         yield return new WaitForSeconds(lazerDuration / 2);
         lazer.enabled = false;
         lazer.startColor = Color.white;
@@ -57,6 +100,7 @@ public class beholder : MonoBehaviour
 
     IEnumerator AttackPlayer()
     {
+        lazer.enabled = false;
         while(true)
         {
             yield return new WaitForSeconds(shootDelay);
