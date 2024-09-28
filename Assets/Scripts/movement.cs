@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class movement : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     //horizontal movement
     public float speed; //can be changed in unity editor
-    private float move;
+    private float horizontalMove;
     private Rigidbody2D rb;
 
     //jumping
@@ -27,14 +27,14 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        move = Input.GetAxis("Horizontal");
+        horizontalMove = InputManager.instance.moveInput.x;
 
         //player jumping using raycast
         Debug.DrawRay(rayStart, Vector2.down * groundCheckDistance, Color.red); //draws a ray in the scene view for debugging
         rayStart = new Vector2(transform.position.x, transform.position.y - 0.5f);
         isGrounded = Physics2D.Raycast(rayStart, Vector2.down, groundCheckDistance, groundLayer);
 
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        if(InputManager.instance.jumpInput && isGrounded)
         {
             jump = true;
         }
@@ -44,7 +44,7 @@ public class movement : MonoBehaviour
     private void FixedUpdate() 
     {
         ///player movement
-        rb.velocity = new Vector2(move * speed, rb.velocity.y);
+        rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
 
         if(jump)
         {
