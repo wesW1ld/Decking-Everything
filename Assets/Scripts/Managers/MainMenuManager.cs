@@ -6,10 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+    [SerializeField] private AudioSource menuMusic;
+
     private void Awake()
     {
         // Ensure the game time is not frozen.
         Time.timeScale = 1;
+
+        StartCoroutine(BeginMenuMusic());
     }
 
     public void PlayGame()
@@ -25,5 +29,11 @@ public class MainMenuManager : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
+    }
+
+    private IEnumerator BeginMenuMusic()
+    {
+        yield return new WaitForSeconds(5.5f);
+        menuMusic.Play();
     }
 }
