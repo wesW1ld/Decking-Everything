@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Liam/Scenes/Liam.unity
     guid: f79d49b99655eee459f6bcaccc196b7f
+  - enabled: 1
+    path: Assets/Scenes/EndScreen.unity
+    guid: 8f673efcc0a52ea4ab76cfe5767e8166
   m_configObjects: {}

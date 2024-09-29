@@ -64,14 +64,19 @@ public class Movement : MonoBehaviour
             horizontalMove = -horizontalMove;
         }
 
-        //sprite movement
-        if(horizontalMove < 0)
+        if (!GameManager.Instance.isGameOver)
         {
-            transform.localScale = new Vector3(-.5f, .5f, 1f);
-        }
-        else if(horizontalMove > 0)
-        {
-            transform.localScale = new Vector3(.5f, .5f, 1f);
+            //sprite movement
+            // Moving left.
+            if(horizontalMove < 0)
+            {
+                transform.localScale = new Vector3(-.5f, .5f, 1f);
+            }
+            // Moving right.
+            else if (horizontalMove > 0)
+            {
+                transform.localScale = new Vector3(.5f, .5f, 1f);
+            }
         }
 
         ///player movement

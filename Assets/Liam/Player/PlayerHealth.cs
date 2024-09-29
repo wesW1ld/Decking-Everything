@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     // Health variables.
-    private float maxHealth = 30f;
+    private float maxHealth = 3f;
     private float currentHealth;
 
     // Bool that prevents the player from taking damage again until after their damage animation has finished.
@@ -27,6 +27,12 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damageTaken)
     {
+        // Exit the function if the game is over as the player cannot take any more damage.
+        if (GameManager.Instance.isGameOver)
+        {
+            return;
+        }
+
         PlayerHasTakenDamage = true;
 
         // Set animation trigger to play damage animation.
@@ -37,16 +43,22 @@ public class PlayerHealth : MonoBehaviour
         // If the player's current health hits or goes below 0, they dead.
         if (currentHealth <= 0)
         {
-            Death();
+            StartCoroutine(Death());
         }
 
         StartCoroutine(DamageCooldown());
     }
 
     // Death...
-    private void Death()
+    private IEnumerator Death()
     {
-        Destroy(gameObject);
+        // Transition to the death animation, then wait 5 seconds for the animation to finish before destroying the player.
+        transform.localScale = new Vector3(-.5f, .5f, 1f);
+        animator.SetTrigger("death");
+        InputManager.playerInput.SwitchCurrentActionMap("UI");
+        GameManager.Instance.isGameOver = true;
+        yield return new WaitForSeconds(5.0f);
+        GameManager.Instance.GameOver(false);
     }
 
     // Cooldown before the player can take damage again.

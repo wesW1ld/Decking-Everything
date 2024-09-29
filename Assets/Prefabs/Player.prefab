@@ -87,6 +87,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   reverseControls: 0
+  pushback: 0
 --- !u!114 &6630213720156437198
 MonoBehaviour:
   m_ObjectHideFlags: 0

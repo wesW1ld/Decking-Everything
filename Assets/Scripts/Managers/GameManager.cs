@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
     public int health = 3;
+
+    public bool isGameOver { get; set; } = false;
+    public bool wonGame { get; private set; } = false;
 
     private void Awake()
     {
@@ -19,6 +23,12 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void GameOver(bool won)
+    {
+        wonGame = won;
+        SceneManager.LoadScene("EndScreen");
     }
 }
 // use GameManager.Instance.variableName to access
