@@ -53,6 +53,14 @@ public class PlayerHealth : MonoBehaviour
         MenuManager.instance.UpdatePlayerHealthUI();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            currentHealth += 5;
+        }
+    }
+
     public void TakeDamage(float damageTaken)
     {
         // Exit the function if the game is over as the player cannot take any more damage.

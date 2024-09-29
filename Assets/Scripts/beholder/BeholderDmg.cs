@@ -5,7 +5,7 @@ using UnityEngine;
 public class BeholderDmg : MonoBehaviour, IDamageable
 {
     //health
-    private float maxHealth = 2f;
+    private float maxHealth = 8f;
     private float currentHealth;
 
     private GameObject player;
@@ -30,6 +30,7 @@ public class BeholderDmg : MonoBehaviour, IDamageable
         if (currentHealth <= 0)
         {
             player.GetComponent<Movement>().enabled = true; //fixes pushback bug if boss dies
+            GameManager.Instance.PlayLichBossMusic();
             Destroy(tilemap);
             Death();
         }

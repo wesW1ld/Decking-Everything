@@ -61,6 +61,7 @@ public class LichDmg : MonoBehaviour, IDamageable
 
     private void Death()
     {
+        GameManager.Instance.GameOver(true);
         Destroy(gameObject);
     }
 
