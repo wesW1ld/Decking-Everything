@@ -99,4 +99,11 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(damageAnimationTime);
         PlayerHasTakenDamage = false;
     }
+
+    public IEnumerator makeInvincible(float time)
+    {
+        PlayerHasTakenDamage = true;
+        yield return new WaitForSeconds(time);
+        PlayerHasTakenDamage = false;
+    }
 }

@@ -11,6 +11,10 @@ public class LichDmg : MonoBehaviour, IDamageable
     LichAttacks lichAttacks;
     private GameObject player;
 
+    //pushback
+    public float force = 15f;
+    public float pushDuration = 0.2f;
+
     public bool HasTakenDamage { get; set; }
 
     // Start is called before the first frame update
@@ -35,10 +39,40 @@ public class LichDmg : MonoBehaviour, IDamageable
             player.GetComponent<Movement>().enabled = true; //fixes pushback bug if boss dies
             Death();
         }
+        else
+        {
+            StartCoroutine(ApplyPushback(player.GetComponent<Rigidbody2D>(), player.GetComponent<Movement>()));
+        }
     }
 
     private void Death()
     {
         Destroy(gameObject);
+    }
+
+    private IEnumerator ApplyPushback(Rigidbody2D rb, Movement playerMovement)
+    {
+        // Disable the player's movement script
+        playerMovement.enabled = false;
+
+        // Apply the pushback force
+        if (rb.transform.position.x < transform.position.x)
+        {
+            rb.velocity = new Vector2(-force, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(force, rb.velocity.y);
+        }
+
+        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+        playerHealth.StartCoroutine(playerHealth.makeInvincible(pushDuration));
+
+
+        // Wait for the pushback duration
+        yield return new WaitForSeconds(pushDuration);
+
+        // Re-enable the player's movement script
+        playerMovement.enabled = true;
     }
 }
