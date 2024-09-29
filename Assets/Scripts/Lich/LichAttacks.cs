@@ -5,10 +5,12 @@ using UnityEngine;
 public class LichAttacks : MonoBehaviour
 {
     public GameObject fireballPrefab;
+    public GameObject iceBoltPrefab;
     public float range = 10f;
     public int attackNum = 1;
 
     private GameObject player;
+    float diff;
 
     void Start()
     {
@@ -34,7 +36,7 @@ public class LichAttacks : MonoBehaviour
     {
         while(attackNum == 1)
         {
-            float diff = transform.position.x - player.transform.position.x;
+            diff = transform.position.x - player.transform.position.x;
             if(Mathf.Abs(diff) < range)
             {
                 float randomOffset = Random.Range(0f, 5f);
@@ -48,12 +50,20 @@ public class LichAttacks : MonoBehaviour
 
             yield return new WaitForSeconds(1f);
         }
-        // while(attackNum == 2)
-        // {
-        //     Destroy(gameObject);
-        //     //3 ice bolts spawned, sent at player
-        // }
+        while(attackNum == 2)
+        {
+            diff = transform.position.x - player.transform.position.x;
+            if(Mathf.Abs(diff) < range)
+            {
+                Vector3 pos1 = transform.position + new Vector3(-5f, 3f, 0f);
+                Vector3 pos2 = transform.position + new Vector3(0, 3f, 0f);
+                Vector3 pos3 = transform.position + new Vector3(5f, 3f, 0f);
+                //add summon animation
+                Instantiate(iceBoltPrefab, pos1, Quaternion.identity);
+                Instantiate(iceBoltPrefab, pos2, Quaternion.identity);
+                Instantiate(iceBoltPrefab, pos3, Quaternion.identity);
+            }
+            yield return new WaitForSeconds(3f);
+        }
     }
 }
-
-//randomise attack placement

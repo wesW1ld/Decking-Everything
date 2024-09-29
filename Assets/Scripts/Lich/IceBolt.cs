@@ -1,21 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class Fireball : MonoBehaviour
+public class IceBolt : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private GameObject player;
 
     private float damageDealt = 1f;
+
+    Vector3 direction;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        player = GameObject.FindWithTag("Player");
+        if(player == null)
+        {
+            Debug.LogError("No player found, LichAttacks");
+        }
+
+        direction = player.transform.position - transform.position;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle + 180);
     }
 
-    private void FixedUpdate() 
+    void FixedUpdate() 
     {
-        rb.velocity = new Vector2(0, -2f);
+        rb.velocity = direction * .5f;
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
