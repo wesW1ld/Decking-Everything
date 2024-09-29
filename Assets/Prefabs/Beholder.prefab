@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 435258932165521099}
   - component: {fileID: 1237342386192584476}
   - component: {fileID: 3209456174684095124}
+  - component: {fileID: 8407879066385725336}
   m_Layer: 7
   m_Name: Beholder
   m_TagString: Untagged
@@ -243,7 +244,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e918d15e1331a604880ce5641a852df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
   currentColor: {r: 0, g: 0, b: 0, a: 0}
   lazerDuration: 1
   shootDelay: 3
@@ -357,7 +357,7 @@ LineRenderer:
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
-    numCapVertices: 0
+    numCapVertices: 5
     alignment: 0
     textureMode: 0
     textureScale: {x: 1, y: 1}
@@ -416,6 +416,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 15
   pushDuration: 0.2
+--- !u!114 &8407879066385725336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3821788072456767235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43113defa9be344396aa7c27ed57d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4266225347092876282
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +438,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8982564085598048940}
   - component: {fileID: 2882584518311760761}
+  - component: {fileID: 4495427124890564072}
   m_Layer: 7
   m_Name: Beholder
   m_TagString: Untagged
@@ -500,6 +513,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &4495427124890564072
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4266225347092876282}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4493bb61c6073014683ca44cbcb43810, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5406719542131683622
 GameObject:
   m_ObjectHideFlags: 0

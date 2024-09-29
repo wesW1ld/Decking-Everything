@@ -8,8 +8,6 @@ public class beholder : MonoBehaviour
 {
     private GameObject player;
 
-    public int health = 5;
-
     private Color[] colors;
     public Color currentColor;
 
@@ -31,6 +29,9 @@ public class beholder : MonoBehaviour
     CapsuleCollider2D capsuleCollider;
     public float zPos = -5;
 
+    //animation
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +45,12 @@ public class beholder : MonoBehaviour
         colors[1] = new Color(0.678f, 0.847f, 0.902f);
         colors[2] = new Color(0.5f, 0.0f, 0.5f);
 
+        // Initialize animator
+        animator = GetComponentInChildren<Animator>();
+        if (animator == null)
+        {
+            Debug.LogError("Animator not found in child o.0");
+        }
 
         // Initialize player
         player = GameObject.FindWithTag("Player");
@@ -84,17 +91,15 @@ public class beholder : MonoBehaviour
             hitbox.transform.position = transform.position;
             capsuleCollider.size = new Vector2(0, 0);
         }
-
-        if(health <= 0)
-        {
-            Destroy(gameObject);
-        }
     }
 
     IEnumerator LazerOn()
     {
+        animator.SetBool("isAtk", true);
+
         //laser
         lazer.enabled = true;
+        lazer.sortingOrder = 3;
         yield return new WaitForSeconds(lazerDuration / 2);
         lazer.startColor = currentColor;
         lazer.endColor = currentColor;
@@ -111,6 +116,8 @@ public class beholder : MonoBehaviour
         Vector3 direction = endpoint - startpoint;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         hitbox.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        animator.SetBool("isAtk", false);
 
         //laser
         yield return new WaitForSeconds(lazerDuration / 2);
@@ -139,6 +146,7 @@ public class beholder : MonoBehaviour
             currentColor = colors[UnityEngine.Random.Range(0, 3)];
 
             yield return new WaitForSeconds(shootDelay);
+
             lazer.SetPosition(0, new Vector3(firepoint.position.x, firepoint.position.y, zPos));
             lazer.SetPosition(1, new Vector3(player.transform.position.x, player.transform.position.y, zPos));
             StartCoroutine(LazerOn());
