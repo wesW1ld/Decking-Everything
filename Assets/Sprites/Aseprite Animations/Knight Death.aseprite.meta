@@ -1,0 +1,516 @@
+fileFormatVersion: 2
+guid: 2e3d9c26e7b585e45a8f7b7ab79178d5
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Knight Death_Frame_7
+    originalName: 
+    pivot: {x: 0.5423729, y: 0.76}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 59
+      height: 50
+    spriteID: 4b5d7299cac3b3047b9fa6d20e7df5cc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Knight Death_Frame_8
+    originalName: 
+    pivot: {x: 0.5423729, y: 0.6938775}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 71
+      y: 4
+      width: 59
+      height: 49
+    spriteID: e0779163d15e5fb49bbf1871e3396233
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 71, y: 4}
+  - name: Knight Death_Frame_9
+    originalName: 
+    pivot: {x: 0.5423729, y: 0.48979592}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 138
+      y: 4
+      width: 59
+      height: 49
+    spriteID: 1a8341e8fe4b48a449e4df6823880bcc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 138, y: 4}
+  - name: Knight Death_Frame_10
+    originalName: 
+    pivot: {x: 0.5423729, y: 0.3265306}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 62
+      width: 59
+      height: 49
+    spriteID: 9c292c6d1ab581d45acbc9a2d7b7548d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 62}
+  - name: Knight Death_Frame_11
+    originalName: 
+    pivot: {x: 0.5423729, y: 0.20408162}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 71
+      y: 62
+      width: 59
+      height: 49
+    spriteID: 7af12b1af05d77e48aa37c8fc371d023
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 71, y: 62}
+  - name: Knight Death_Frame_12
+    originalName: 
+    pivot: {x: 0.5423729, y: 0.14285713}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 138
+      y: 62
+      width: 59
+      height: 49
+    spriteID: 1fcec382a5a196846a51740a22ba3128
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 138, y: 62}
+  - name: Knight Death_Frame_0
+    originalName: 
+    pivot: {x: 0.625, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 85
+      y: 184
+      width: 24
+      height: 63
+    spriteID: 92d4ac001b2fa9b4882483102c0bdc90
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 85, y: 184}
+  - name: Knight Death_Frame_1
+    originalName: 
+    pivot: {x: 0.6896551, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 184
+      width: 29
+      height: 63
+    spriteID: 56a50b9b21b23c74cb158905962cb331
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 48, y: 184}
+  - name: Knight Death_Frame_2
+    originalName: 
+    pivot: {x: 0.61111104, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 184
+      width: 36
+      height: 63
+    spriteID: af04a9e613a6fd540a57dcd0ee4b332a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 184}
+  - name: Knight Death_Frame_3
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.03508772}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 119
+      width: 48
+      height: 57
+    spriteID: bd209f1ab20549b49b58c232f4133911
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 119}
+  - name: Knight Death_Frame_4
+    originalName: 
+    pivot: {x: 0.5272727, y: -0.023809524}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 60
+      y: 119
+      width: 55
+      height: 42
+    spriteID: ff583cb8b59e286459e43cc98176b3e3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 60, y: 119}
+  - name: Knight Death_Frame_5
+    originalName: 
+    pivot: {x: 0.55172414, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 123
+      y: 119
+      width: 58
+      height: 30
+    spriteID: d924df93c52e5cf41b3de3f39e4c5565
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 123, y: 119}
+  - name: Knight Death_Frame_6
+    originalName: 
+    pivot: {x: 0.5423729, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 189
+      y: 119
+      width: 59
+      height: 12
+    spriteID: c10a255102b5e1b4d85bf84269ae72d2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 189, y: 119}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 1045644315
+    name: Knight Death
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Knight Death_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: -38
+        width: 59
+        height: 50
+      spriteId: 4b5d7299cac3b3047b9fa6d20e7df5cc
+    - name: Knight Death_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: -34
+        width: 59
+        height: 49
+      spriteId: e0779163d15e5fb49bbf1871e3396233
+    - name: Knight Death_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: -24
+        width: 59
+        height: 49
+      spriteId: 1a8341e8fe4b48a449e4df6823880bcc
+    - name: Knight Death_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: -16
+        width: 59
+        height: 49
+      spriteId: 9c292c6d1ab581d45acbc9a2d7b7548d
+    - name: Knight Death_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: -10
+        width: 59
+        height: 49
+      spriteId: 7af12b1af05d77e48aa37c8fc371d023
+    - name: Knight Death_Frame_12
+      frameIndex: 12
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: -7
+        width: 59
+        height: 49
+      spriteId: 1fcec382a5a196846a51740a22ba3128
+    - name: Knight Death_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 20
+        y: 0
+        width: 24
+        height: 63
+      spriteId: 92d4ac001b2fa9b4882483102c0bdc90
+    - name: Knight Death_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 15
+        y: 0
+        width: 29
+        height: 63
+      spriteId: 56a50b9b21b23c74cb158905962cb331
+    - name: Knight Death_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 13
+        y: 0
+        width: 36
+        height: 63
+      spriteId: af04a9e613a6fd540a57dcd0ee4b332a
+    - name: Knight Death_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 11
+        y: 2
+        width: 48
+        height: 57
+      spriteId: bd209f1ab20549b49b58c232f4133911
+    - name: Knight Death_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 1
+        width: 55
+        height: 42
+      spriteId: ff583cb8b59e286459e43cc98176b3e3
+    - name: Knight Death_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: 0
+        width: 58
+        height: 30
+      spriteId: d924df93c52e5cf41b3de3f39e4c5565
+    - name: Knight Death_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: 0
+        width: 59
+        height: 12
+      spriteId: c10a255102b5e1b4d85bf84269ae72d2
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 70, y: 64}
