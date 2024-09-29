@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -11,8 +10,8 @@ public class PlayerHealth : MonoBehaviour
 
     // Health variables.
     private float maxHealth = 5f;
-    public float currentHealth { get; private set; }
-    private bool healthSet = false;
+    public static float currentHealth { get; private set; }
+    private static bool healthSet = false;
 
     // Bool that prevents the player from taking damage again until after their damage animation has finished.
     public bool PlayerHasTakenDamage { get; set; }
@@ -32,6 +31,10 @@ public class PlayerHealth : MonoBehaviour
         {
             instance = this;
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Start()
@@ -45,6 +48,9 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = maxHealth;
             healthSet = true;
         }
+
+        // Set the player health UI.
+        MenuManager.instance.UpdatePlayerHealthUI();
     }
 
     public void TakeDamage(float damageTaken)
@@ -70,6 +76,8 @@ public class PlayerHealth : MonoBehaviour
         }
 
         StartCoroutine(DamageCooldown());
+
+        MenuManager.instance.UpdatePlayerHealthUI();
     }
 
     // Death...

@@ -13,11 +13,27 @@ using UnityEditor;
 
 public class MenuManager : MonoBehaviour
 {
+    // Singleton.
+    public static MenuManager instance;
+
     // Ref to the pause menu that will be set in the inspector.
     public GameObject pauseMenu;
 
     // Player health UI.
     [SerializeField] private Image[] hearts;
+
+    private void Awake()
+    {
+        // Singleton ref.
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Update()
     {
@@ -31,9 +47,6 @@ public class MenuManager : MonoBehaviour
             // Resume the game.
             Resume();
         }
-
-        // Update the player health UI.
-        PlayerHealthUI();
     }
 
     // Pause the game.
@@ -76,11 +89,11 @@ public class MenuManager : MonoBehaviour
         pauseMenu.SetActive(false);
     }
 
-    private void PlayerHealthUI()
+    public void UpdatePlayerHealthUI()
     {
         for (int i = 0; i < hearts.Length; i++)
         {
-            if (i < PlayerHealth.instance.currentHealth)
+            if (i < PlayerHealth.currentHealth)
             {
                 hearts[i].enabled = true;
             }
