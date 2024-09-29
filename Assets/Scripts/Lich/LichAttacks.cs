@@ -7,7 +7,7 @@ public class LichAttacks : MonoBehaviour
     public GameObject fireballPrefab;
     public GameObject iceBoltPrefab;
     public GameObject skullPrefab;
-    public float range = 10f;
+    public float range = 20f;
     public int attackNum = 1;
 
     private GameObject player;

@@ -19,14 +19,16 @@ public class Skull : MonoBehaviour
             Debug.LogError("No Lich found, Skull");
         }
 
-        if(transform.position.x < Lich.transform.position.x)
+        if(transform.position.x < Lich.transform.position.x) //left
         {
             direction = -1f;
+            Debug.Log("left");
         }
-        else
+        else //right
         {
             direction = 1f;
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            Debug.Log("right");
+            transform.localScale = transform.localScale * new Vector2(-1, 1);
         }
 
         rb.AddForce(new Vector2(direction * 0f, -10f), ForceMode2D.Impulse);
@@ -58,7 +60,7 @@ public class Skull : MonoBehaviour
 
     IEnumerator DestroySkull()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         Destroy(gameObject);
     }
 }
