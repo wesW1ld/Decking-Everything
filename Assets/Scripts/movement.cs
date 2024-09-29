@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -15,7 +17,7 @@ public class Movement : MonoBehaviour
     public bool isGrounded;
     public float jumpForce; //can be changed in unity editor
     private Vector2 rayStart;
-    public float groundCheckDistance = 0.1f; //distance to ground to check for jumping
+    public float groundCheckDistance = 0.2f; //distance to ground to check for jumping
     public LayerMask groundLayer; //set ground to have "floor" layer in unity
 
     // Quality of life improvements for jumping that give the player a bit more room for error when trying to jump.
@@ -32,6 +34,9 @@ public class Movement : MonoBehaviour
     [Header("Audio")]
     // Audio sources.
     [SerializeField] private AudioSource playerFrozen;
+
+    // If player's y position is less than this, the scene will reload.
+    private float respawnBoundary = -20f;
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +63,9 @@ public class Movement : MonoBehaviour
 
         //JUMP!!!
         Jump();
+
+        // Checks if player has fallen off the map.
+        RespawnBoundary();
     }
 
     //FixedUpdate is called at a fixed interval and is used for physics calculations
@@ -155,5 +163,14 @@ public class Movement : MonoBehaviour
     {
         //Re-enable the player's input.
         InputManager.playerInput.currentActionMap.Enable();
+    }
+
+    private void RespawnBoundary()
+    {
+        if (transform.position.y < respawnBoundary)
+        {
+            var currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.name);
+        }
     }
 }
