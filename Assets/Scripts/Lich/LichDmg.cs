@@ -34,6 +34,8 @@ public class LichDmg : MonoBehaviour, IDamageable
 
         lichAttacks.attackNum += 1;
 
+        StartCoroutine(makeInvincible(4f));
+
         if (currentHealth <= 0)
         {
             player.GetComponent<Movement>().enabled = true; //fixes pushback bug if boss dies
@@ -89,5 +91,12 @@ public class LichDmg : MonoBehaviour, IDamageable
 
         // Re-enable the player's movement script
         playerMovement.enabled = true;
+    }
+
+    public IEnumerator makeInvincible(float time)
+    {
+        HasTakenDamage = true;
+        yield return new WaitForSeconds(time);
+        HasTakenDamage = false;
     }
 }
