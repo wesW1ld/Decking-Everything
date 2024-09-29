@@ -147,6 +147,7 @@ public class Movement : MonoBehaviour
         // Disable the player's input.
         InputManager.playerInput.currentActionMap.Disable();
         playerFrozen.Play();
+        animator.SetTrigger("frozen");
 
     }
 
