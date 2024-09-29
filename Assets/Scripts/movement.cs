@@ -61,11 +61,11 @@ public class Movement : MonoBehaviour
         //sprite movement
         if(horizontalMove < 0)
         {
-            transform.localScale = new Vector3(.5f, .5f, 1f);
+            transform.localScale = new Vector3(-.5f, .5f, 1f);
         }
         else if(horizontalMove > 0)
         {
-            transform.localScale = new Vector3(-.5f, .5f, 1f);
+            transform.localScale = new Vector3(.5f, .5f, 1f);
         }
 
         ///player movement
