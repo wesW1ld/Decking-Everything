@@ -34,6 +34,7 @@ public class Movement : MonoBehaviour
     [Header("Audio")]
     // Audio sources.
     [SerializeField] private AudioSource playerFrozen;
+    [SerializeField] private AudioSource playerReverseControls;
 
     // If player's y position is less than this, the scene will reload.
     private float respawnBoundary = -20f;
@@ -71,11 +72,6 @@ public class Movement : MonoBehaviour
     //FixedUpdate is called at a fixed interval and is used for physics calculations
     private void FixedUpdate() 
     {
-        if(reverseControls)
-        {
-            horizontalMove = -horizontalMove;
-        }
-
         if (!GameManager.Instance.isGameOver)
         {
             //sprite movement
@@ -174,17 +170,13 @@ public class Movement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void ReverseControls()
     {
-        if (collision.name == "StartLichBossMusic")
+        if (reverseControls)
         {
-            GameManager.Instance.PlayLichBossMusic();
-            Destroy(collision.gameObject);
+            horizontalMove = -horizontalMove;
         }
-        else if (collision.name == "EndLichBossMusic")
-        {
-            GameManager.Instance.EndLichBossMusic();
-            Destroy(collision.gameObject);
-        }
+
+        playerReverseControls.Play();
     }
 }

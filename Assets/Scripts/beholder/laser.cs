@@ -65,6 +65,7 @@ public class laser : MonoBehaviour
     IEnumerator ReverseControls(Collider2D other, Movement playerMovement)
     {
         playerMovement.reverseControls = true;
+        playerMovement.ReverseControls();
         yield return new WaitForSeconds(3f);
         playerMovement.reverseControls = false;
     }
