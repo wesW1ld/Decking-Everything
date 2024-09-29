@@ -17,6 +17,9 @@ public class PlayerHealth : MonoBehaviour
     // Time it takes for the player's damage animation to finish.
     private float damageAnimationTime = 1.0f;
 
+    // Audio sources.
+    [SerializeField] private AudioSource playerDamaged;
+
     private void Start()
     {
         // Set component ref.
@@ -35,8 +38,9 @@ public class PlayerHealth : MonoBehaviour
 
         PlayerHasTakenDamage = true;
 
-        // Set animation trigger to play damage animation.
+        // Set animation trigger to play damage animation and play a sound.
         animator.SetTrigger("damaged");
+        playerDamaged.Play();
 
         currentHealth -= damageTaken;
 

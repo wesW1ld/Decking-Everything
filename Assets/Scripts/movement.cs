@@ -29,6 +29,10 @@ public class Movement : MonoBehaviour
     public bool reverseControls = false;
     public bool pushback = false;
 
+    [Header("Audio")]
+    // Audio sources.
+    [SerializeField] private AudioSource playerFrozen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -142,6 +146,7 @@ public class Movement : MonoBehaviour
     {
         // Disable the player's input.
         InputManager.playerInput.currentActionMap.Disable();
+        playerFrozen.Play();
 
     }
 

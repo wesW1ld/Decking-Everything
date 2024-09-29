@@ -27,6 +27,9 @@ public class PlayerAttack : MonoBehaviour
     private float timeBetweenAttacks = 0.70f;
     private float attackTimeCounter;
 
+    // Audio sources.
+    [SerializeField] private AudioSource playerAttack;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -46,6 +49,7 @@ public class PlayerAttack : MonoBehaviour
             // Reset the attack time counter to begin attack cooldown.
             attackTimeCounter = 0f;
 
+            // Play the attack animation.
             animator.SetTrigger("attack");
         }
 
@@ -84,6 +88,7 @@ public class PlayerAttack : MonoBehaviour
                 // If an iDamageable object was found, call its Damage method and add it to a list.
                 if (iDamageable != null && !iDamageable.HasTakenDamage)
                 {
+                    playerAttack.Play();
                     iDamageable.Damage(damageAmount);
                     iDamageables.Add(iDamageable);
                 }
