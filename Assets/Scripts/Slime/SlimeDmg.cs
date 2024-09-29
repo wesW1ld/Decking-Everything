@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class SlimeDmg : MonoBehaviour, IDamageable
 {
@@ -12,6 +13,8 @@ public class SlimeDmg : MonoBehaviour, IDamageable
 
     private GameObject player;
 
+    GameObject tilemap;
+
     public bool HasTakenDamage { get; set; }
 
     // Start is called before the first frame update
@@ -20,6 +23,8 @@ public class SlimeDmg : MonoBehaviour, IDamageable
         currentHealth = maxHealth;
         player = GameObject.FindWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
+
+        tilemap = GameObject.Find("TilemapWall1");
     }
 
     public void Damage(float damageAmt)
@@ -31,6 +36,10 @@ public class SlimeDmg : MonoBehaviour, IDamageable
         if (currentHealth <= 0)
         {
             player.GetComponent<Movement>().enabled = true; //fixes pushback bug if boss dies
+
+            //destory wall
+            Destroy(tilemap);
+
             Death();
         }
         else

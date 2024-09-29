@@ -19,7 +19,7 @@ public class beholder : MonoBehaviour
     public float lazerDuration = 1f;
     private LineRenderer lazer;
     public float shootDelay = 3f;
-    public float range = 10f;
+    public float range = 2f;
 
     //hitbox of line
     GameObject hitbox;

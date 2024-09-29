@@ -9,6 +9,7 @@ public class BeholderDmg : MonoBehaviour, IDamageable
     private float currentHealth;
 
     private GameObject player;
+    GameObject tilemap;
 
     public bool HasTakenDamage { get; set; }
 
@@ -17,6 +18,7 @@ public class BeholderDmg : MonoBehaviour, IDamageable
     {
         currentHealth = maxHealth;
         player = GameObject.FindWithTag("Player");
+        tilemap = GameObject.Find("TilemapWall2");
     }
 
     public void Damage(float damageAmt)
@@ -28,6 +30,7 @@ public class BeholderDmg : MonoBehaviour, IDamageable
         if (currentHealth <= 0)
         {
             player.GetComponent<Movement>().enabled = true; //fixes pushback bug if boss dies
+            Destroy(tilemap);
             Death();
         }
     }
