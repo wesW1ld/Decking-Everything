@@ -137,4 +137,17 @@ public class Movement : MonoBehaviour
             animator.SetBool("moving", false);
         }
     }
+
+    public void FreezePlayer()
+    {
+        // Disable the player's input.
+        InputManager.playerInput.currentActionMap.Disable();
+
+    }
+
+    public void UnFreezePlayer()
+    {
+        //Re-enable the player's input.
+        InputManager.playerInput.currentActionMap.Enable();
+    }
 }

@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Optional: Makes sure the object persists across scenes
+            // Throws a warning, so commenting this out as I believe everything works fine without it.
+            // DontDestroyOnLoad(gameObject); // Optional: Makes sure the object persists across scenes
         }
         else
         {

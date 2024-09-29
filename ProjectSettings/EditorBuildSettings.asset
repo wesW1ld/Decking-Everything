@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: c387449eb039a454cbef78ed4ae98eef
   - enabled: 1
+    path: Assets/Scenes/Yadriel.unity
+    guid: a4cceb9f52f79d648a3c8f9cac525b30
+  - enabled: 0
     path: Assets/Liam/Scenes/Liam.unity
     guid: f79d49b99655eee459f6bcaccc196b7f
   - enabled: 1

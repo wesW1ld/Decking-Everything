@@ -9,6 +9,8 @@ public class laser : MonoBehaviour
 
     RigidbodyConstraints2D originalConstraints;
 
+    private float damageDealt = 1f;
+
     private void Start() 
     {
         colors = new Color[3];
@@ -30,37 +32,44 @@ public class laser : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if(beholder.currentColor == colors[0])
+            // Reference to the player's health and movement scripts.
+            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+            Movement playerMovement = other.GetComponent<Movement>();
+
+            if (beholder.currentColor == colors[0])
             {
-                GameManager.Instance.health -= 1;
+                // Player takes 1 damage currently.
+                playerHealth.TakeDamage(damageDealt);
                 Debug.Log("Player hit by red laser. Health: " + GameManager.Instance.health);
             }
             else if(beholder.currentColor == colors[1])
             {
                 Debug.Log("Player hit by cyan laser.");
-                StartCoroutine(FreezePlayer(other));
+                StartCoroutine(FreezePlayer(other, playerMovement));
             }
             else if(beholder.currentColor == colors[2])
             {
                 Debug.Log("Player hit by purple laser.");
-                StartCoroutine(ReverseControls(other));
+                StartCoroutine(ReverseControls(other, playerMovement));
             }
         }
     }
 
-    IEnumerator FreezePlayer(Collider2D other)
+    IEnumerator FreezePlayer(Collider2D other, Movement playerMovement)
     {
+        // Freeze the player, but also disable their movement input to ensure they cannot move.
         other.GetComponent<Movement>().pushback = true;
         other.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        playerMovement.FreezePlayer();
         yield return new WaitForSeconds(2.5f);
         other.GetComponent<Movement>().pushback = false;
+        playerMovement.UnFreezePlayer();
     }
 
-    IEnumerator ReverseControls(Collider2D other)
+    IEnumerator ReverseControls(Collider2D other, Movement playerMovement)
     {
-        Movement movementScript = other.GetComponent<Movement>(); 
-        movementScript.reverseControls = true;
+        playerMovement.reverseControls = true;
         yield return new WaitForSeconds(3f);
-        movementScript.reverseControls = false;
+        playerMovement.reverseControls = false;
     }
 }
