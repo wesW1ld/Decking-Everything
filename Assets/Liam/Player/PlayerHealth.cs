@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
     // Health variables.
     private float maxHealth = 5f;
     public static float currentHealth { get; private set; }
-    private static bool healthSet = false;
+    public static bool healthSet = false;
 
     // Bool that prevents the player from taking damage again until after their damage animation has finished.
     public bool PlayerHasTakenDamage { get; set; }

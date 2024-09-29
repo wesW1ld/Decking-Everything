@@ -173,4 +173,18 @@ public class Movement : MonoBehaviour
             SceneManager.LoadScene(currentScene.name);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.name == "StartLichBossMusic")
+        {
+            GameManager.Instance.PlayLichBossMusic();
+            Destroy(collision.gameObject);
+        }
+        else if (collision.name == "EndLichBossMusic")
+        {
+            GameManager.Instance.EndLichBossMusic();
+            Destroy(collision.gameObject);
+        }
+    }
 }

@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
     public bool isGameOver { get; set; } = false;
     public bool wonGame { get; private set; } = false;
 
+    // Audio sources.
+    [SerializeField] private AudioSource gameMusic;
+    [SerializeField] private AudioSource lichBossMusic;
+
     private void Awake()
     {
         if (Instance == null)
@@ -28,8 +32,21 @@ public class GameManager : MonoBehaviour
 
     public void GameOver(bool won)
     {
+        PlayerHealth.healthSet = false;
         wonGame = won;
         SceneManager.LoadScene("EndScreen");
+    }
+
+    public void PlayLichBossMusic()
+    {
+        gameMusic.Stop();
+        lichBossMusic.Play();
+    }
+
+    public void EndLichBossMusic()
+    {
+        lichBossMusic.Stop();
+        gameMusic.Play();
     }
 }
 // use GameManager.Instance.variableName to access
