@@ -48,7 +48,8 @@ public class slimeMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) 
     {
-        if(other.gameObject.CompareTag("Player") && (other.transform.position.y + 3f) < transform.position.y)
+        //&& (other.transform.position.y + 3f) < transform.position.y
+        if(other.gameObject.CompareTag("Player"))
         {
             PlayerHealth playerHealth = other.gameObject.GetComponent<PlayerHealth>();
             playerHealth.TakeDamage(1f);
