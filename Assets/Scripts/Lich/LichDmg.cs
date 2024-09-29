@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeholderDmg : MonoBehaviour, IDamageable
+public class LichDmg : MonoBehaviour, IDamageable
 {
     //health
-    private float maxHealth = 2f;
+    private float maxHealth = 3f;
     private float currentHealth;
 
     public bool HasTakenDamage { get; set; }
