@@ -11,6 +11,10 @@ public class LichAttacks : MonoBehaviour
     public float range = 20f;
     public int attackNum = 1;
 
+    public GameObject ice1 = null;
+    public GameObject ice2 = null;
+    public GameObject ice3 = null;
+
     Animator animator;
 
     private GameObject player;
@@ -104,11 +108,11 @@ public class LichAttacks : MonoBehaviour
         Vector3 pos2 = transform.position + new Vector3(0, 3f, 0f);
         Vector3 pos3 = transform.position + new Vector3(5f, 3f, 0f);
 
-        GameObject ice1 = Instantiate(iceBoltPrefab, pos1, Quaternion.identity);
+        ice1 = Instantiate(iceBoltPrefab, pos1, Quaternion.identity);
         ice1.GetComponent<IceBolt>().enabled = false;
-        GameObject ice2 = Instantiate(iceBoltPrefab, pos2, Quaternion.identity);
+        ice2 = Instantiate(iceBoltPrefab, pos2, Quaternion.identity);
         ice2.GetComponent<IceBolt>().enabled = false;
-        GameObject ice3 = Instantiate(iceBoltPrefab, pos3, Quaternion.identity);
+        ice3 = Instantiate(iceBoltPrefab, pos3, Quaternion.identity);
         ice3.GetComponent<IceBolt>().enabled = false;
 
         //rotations for animation

@@ -37,6 +37,20 @@ public class LichDmg : MonoBehaviour, IDamageable
         if (currentHealth <= 0)
         {
             player.GetComponent<Movement>().enabled = true; //fixes pushback bug if boss dies
+
+            if(lichAttacks.ice1 != null)
+            {
+                Destroy(lichAttacks.ice1);
+            }
+            if(lichAttacks.ice2 != null)
+            {
+                Destroy(lichAttacks.ice2);
+            }
+            if(lichAttacks.ice3 != null)
+            {
+                Destroy(lichAttacks.ice3);
+            }
+
             Death();
         }
         else
