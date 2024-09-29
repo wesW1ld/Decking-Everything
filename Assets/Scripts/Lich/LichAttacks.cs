@@ -7,8 +7,11 @@ public class LichAttacks : MonoBehaviour
     public GameObject fireballPrefab;
     public GameObject iceBoltPrefab;
     public GameObject skullPrefab;
+
     public float range = 20f;
     public int attackNum = 1;
+
+    Animator animator;
 
     private GameObject player;
     float diff;
@@ -20,6 +23,8 @@ public class LichAttacks : MonoBehaviour
         {
             Debug.LogError("No player found, LichAttacks");
         }
+
+        animator = GetComponentInChildren<Animator>();
 
         StartCoroutine(Attack());
     }
@@ -93,7 +98,8 @@ public class LichAttacks : MonoBehaviour
 
     IEnumerator IceBolt()
     {
-        //add summon animation
+        animator.SetBool("attacking", true);
+
         Vector3 pos1 = transform.position + new Vector3(-5f, 3f, 0f);
         Vector3 pos2 = transform.position + new Vector3(0, 3f, 0f);
         Vector3 pos3 = transform.position + new Vector3(5f, 3f, 0f);
@@ -123,6 +129,8 @@ public class LichAttacks : MonoBehaviour
         ice1.GetComponent<IceBolt>().enabled = true;
         ice2.GetComponent<IceBolt>().enabled = true;
         ice3.GetComponent<IceBolt>().enabled = true;
+
+        animator.SetBool("attacking", false);
     }
 
     private void Skull()
