@@ -23,10 +23,6 @@ public class laser : MonoBehaviour
         {
             Debug.LogError("ParentScript component not found in parent GameObject.");
         }
-        else
-        {
-            Debug.Log("ParentScript component found in parent GameObject.");
-        }
     }
     private void OnTriggerEnter2D(Collider2D other) 
     {

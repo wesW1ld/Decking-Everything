@@ -22,12 +22,10 @@ public class Skull : MonoBehaviour
         if(transform.position.x < Lich.transform.position.x) //left
         {
             direction = -1f;
-            Debug.Log("left");
         }
         else //right
         {
             direction = 1f;
-            Debug.Log("right");
             transform.localScale = transform.localScale * new Vector2(-1, 1);
         }
 
