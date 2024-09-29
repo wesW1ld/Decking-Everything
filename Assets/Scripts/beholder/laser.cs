@@ -50,20 +50,10 @@ public class laser : MonoBehaviour
 
     IEnumerator FreezePlayer(Collider2D other)
     {
-        originalConstraints = other.GetComponent<Rigidbody2D>().constraints;
-
-        float elapsedTime = 0f;
-        while (elapsedTime < 2.5f)
-        {
-            other.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
-
-            elapsedTime += Time.deltaTime;
-            yield return null; // wait for the next frame
-        }
-        
-        //unfreeze player
-        other.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-        other.GetComponent<Rigidbody2D>().constraints = originalConstraints;
+        other.GetComponent<Movement>().pushback = true;
+        other.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        yield return new WaitForSeconds(2.5f);
+        other.GetComponent<Movement>().pushback = false;
     }
 
     IEnumerator ReverseControls(Collider2D other)

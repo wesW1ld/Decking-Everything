@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fe9b49e38b67247489a310be924d4f7c
+guid: 2ee7b020eb7568c488b8a565669b9ae9
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 16
+    spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -75,7 +75,7 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 0
+    defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -88,7 +88,7 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 0
+    defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638631639907627645
+  platformSettingsDirtyTick: 0
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,38 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Beholder Idle_Frame_0
+  - name: GelatinousCube_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: 0.53488374}
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 186
+      width: 82
+      height: 84
+    spriteID: e3d1a37027d76f14d8047d2beb26a6e4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 186}
+  - name: GelatinousCube_Frame_1
+    originalName: 
+    pivot: {x: 0.52873564, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 96
-      height: 86
-    spriteID: d19aa7acd07060f46a222397b69e388d
+      width: 87
+      height: 83
+    spriteID: 01a964360b1db5e43a53a67b7a719f6c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,58 +161,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Beholder Idle_Frame_1
+  - name: GelatinousCube_Frame_2
     originalName: 
-    pivot: {x: 0.49473685, y: 0.50602406}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 108
-      y: 4
-      width: 95
-      height: 83
-    spriteID: b19a6438fc9e44a47b4f3129cbf9c041
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 108, y: 4}
-  - name: Beholder Idle_Frame_2
-    originalName: 
-    pivot: {x: 0.49462363, y: 0.5119048}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 108
-      y: 95
-      width: 93
-      height: 84
-    spriteID: aa511d6aabf85a24d97b5cb9b5313017
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 108, y: 95}
-  - name: Beholder Idle_Frame_3
-    originalName: 
-    pivot: {x: 0.5, y: 0.53488374}
+    pivot: {x: 0.52873564, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 98
-      width: 96
-      height: 86
-    spriteID: 73ceff775bb6e6942a86cd79246eb7eb
+      y: 95
+      width: 87
+      height: 83
+    spriteID: b99f575dfcec14c479cd282c3d6315de
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -200,79 +180,104 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 98}
+    uvTransform: {x: 4, y: 95}
+  - name: GelatinousCube_Frame_3
+    originalName: 
+    pivot: {x: 0.53409094, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 99
+      y: 4
+      width: 88
+      height: 79
+    spriteID: 85ce872b3faac0245a824bd853c03735
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 99, y: 4}
+  - name: GelatinousCube_Frame_4
+    originalName: 
+    pivot: {x: 0.52873564, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 278
+      width: 87
+      height: 77
+    spriteID: 7d8c8c2bf8ad31541a0570d969640efe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 278}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1959111959
-    name: Beholder Idle
+    guid: 134857796
+    name: GelatinousCube
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Beholder Idle_Frame_0
+    - name: GelatinousCube_Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 0
-        y: 2
-        width: 96
-        height: 86
-      spriteId: d19aa7acd07060f46a222397b69e388d
-    - name: Beholder Idle_Frame_1
+        x: 7
+        y: 0
+        width: 82
+        height: 84
+      spriteId: e3d1a37027d76f14d8047d2beb26a6e4
+    - name: GelatinousCube_Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
-        x: 1
-        y: 6
-        width: 95
+        x: 2
+        y: 0
+        width: 87
         height: 83
-      spriteId: b19a6438fc9e44a47b4f3129cbf9c041
-    - name: Beholder Idle_Frame_2
+      spriteId: 01a964360b1db5e43a53a67b7a719f6c
+    - name: GelatinousCube_Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
         x: 2
-        y: 5
-        width: 93
-        height: 84
-      spriteId: aa511d6aabf85a24d97b5cb9b5313017
-    - name: Beholder Idle_Frame_3
+        y: 0
+        width: 87
+        height: 83
+      spriteId: b99f575dfcec14c479cd282c3d6315de
+    - name: GelatinousCube_Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
-        x: 0
-        y: 2
-        width: 96
-        height: 86
-      spriteId: 73ceff775bb6e6942a86cd79246eb7eb
+        x: 1
+        y: 0
+        width: 88
+        height: 79
+      spriteId: 85ce872b3faac0245a824bd853c03735
+    - name: GelatinousCube_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 0
+        width: 87
+        height: 77
+      spriteId: 7d8c8c2bf8ad31541a0570d969640efe
     linkedCells: []
     parentIndex: -1
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
