@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
+    // Singleton ref.
+    public static PlayerHealth instance;
+
     // Health variables.
-    private float maxHealth = 3f;
-    private float currentHealth;
+    private float maxHealth = 5f;
+    public float currentHealth { get; private set; }
+    private bool healthSet = false;
 
     // Bool that prevents the player from taking damage again until after their damage animation has finished.
     public bool PlayerHasTakenDamage { get; set; }
@@ -20,18 +25,32 @@ public class PlayerHealth : MonoBehaviour
     // Audio sources.
     [SerializeField] private AudioSource playerDamaged;
 
+    private void Awake()
+    {
+        // Singleton ref.
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
     private void Start()
     {
         // Set component ref.
         animator = GetComponent<Animator>();
 
-        currentHealth = maxHealth;
+        // Only set the player's health to the max health once.
+        if (!healthSet)
+        {
+            currentHealth = maxHealth;
+            healthSet = true;
+        }
     }
 
     public void TakeDamage(float damageTaken)
     {
         // Exit the function if the game is over as the player cannot take any more damage.
-        if (GameManager.Instance.isGameOver)
+        if (GameManager.Instance.isGameOver || PlayerHasTakenDamage)
         {
             return;
         }

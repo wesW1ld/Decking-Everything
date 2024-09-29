@@ -503,7 +503,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 0, b: 0, a: 1}
+    m_NormalColor: {r: 1, g: 0.34117648, b: 0, a: 1}
     m_HighlightedColor: {r: 0.7924528, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.5471698, g: 0.007742955, b: 0.007742955, a: 1}
     m_SelectedColor: {r: 0.7921569, g: 0, b: 0, a: 1}
@@ -636,7 +636,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 0, b: 0, a: 1}
+    m_NormalColor: {r: 1, g: 0.34117648, b: 0, a: 1}
     m_HighlightedColor: {r: 0.7924528, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.5471698, g: 0.007742955, b: 0.007742955, a: 1}
     m_SelectedColor: {r: 0.7921569, g: 0, b: 0, a: 1}
@@ -769,7 +769,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 0, b: 0, a: 1}
+    m_NormalColor: {r: 1, g: 0.34117648, b: 0, a: 1}
     m_HighlightedColor: {r: 0.7924528, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.5471698, g: 0.007742955, b: 0.007742955, a: 1}
     m_SelectedColor: {r: 0.7921569, g: 0, b: 0, a: 1}
@@ -1211,7 +1211,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 0, b: 0, a: 1}
+    m_NormalColor: {r: 1, g: 0.34117648, b: 0, a: 1}
     m_HighlightedColor: {r: 0.7924528, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.5471698, g: 0.007742955, b: 0.007742955, a: 1}
     m_SelectedColor: {r: 0.7921569, g: 0, b: 0, a: 1}
@@ -1419,7 +1419,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 0, b: 0, a: 1}
+    m_NormalColor: {r: 1, g: 0.34117648, b: 0, a: 1}
     m_HighlightedColor: {r: 0.7924528, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.5471698, g: 0.007742955, b: 0.007742955, a: 1}
     m_SelectedColor: {r: 0.7921569, g: 0, b: 0, a: 1}
@@ -1546,13 +1546,13 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 584612777365365583}
+    m_SelectOnUp: {fileID: 523056521781097365}
     m_SelectOnDown: {fileID: 5738622725776648159}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 0, b: 0, a: 1}
+    m_NormalColor: {r: 1, g: 0.34117648, b: 0, a: 1}
     m_HighlightedColor: {r: 0.7924528, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.5471698, g: 0.007742955, b: 0.007742955, a: 1}
     m_SelectedColor: {r: 0.7921569, g: 0, b: 0, a: 1}
