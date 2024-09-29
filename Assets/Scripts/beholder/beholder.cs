@@ -1,13 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class beholder : MonoBehaviour
 {
     private GameObject player;
 
-    //eye to shoot out of
+    public int health = 5;
+
+    private Color[] colors;
+    public Color currentColor;
+
+    //eyes to shoot out of
     private Transform firepoint;
+    private Transform[] eyes;
 
     //shooting
     public float lazerDuration = 1f;
@@ -21,16 +29,21 @@ public class beholder : MonoBehaviour
     Vector2 endpoint;
     public GameObject prefabHitbox;
     CapsuleCollider2D capsuleCollider;
+    public float zPos = -5;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Initialize firepoint
-        firepoint = transform.Find("firepoint1");
-        if (firepoint == null)
-        {
-            Debug.LogError("Firepoint1 not found as a child of the GameObject.");
-        }
+        // Initialize firepoints
+        eyes = new Transform[11];
+        GetEyes(eyes);
+
+        //Initialize color array, change in laser.cs if you change this
+        colors = new Color[3];
+        colors[0] = Color.red;
+        colors[1] = new Color(0.678f, 0.847f, 0.902f);
+        colors[2] = new Color(0.5f, 0.0f, 0.5f);
+
 
         // Initialize player
         player = GameObject.FindWithTag("Player");
@@ -64,9 +77,17 @@ public class beholder : MonoBehaviour
     {
         if(lazer.startColor == Color.white)
         {
-            lazer.SetPosition(0, new Vector3(firepoint.position.x, firepoint.position.y, -3));
+            if(firepoint != null)
+            {
+                lazer.SetPosition(0, new Vector3(firepoint.position.x, firepoint.position.y, zPos));
+            }
             hitbox.transform.position = transform.position;
             capsuleCollider.size = new Vector2(0, 0);
+        }
+
+        if(health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -75,8 +96,8 @@ public class beholder : MonoBehaviour
         //laser
         lazer.enabled = true;
         yield return new WaitForSeconds(lazerDuration / 2);
-        lazer.startColor = Color.red;
-        lazer.endColor = Color.red;
+        lazer.startColor = currentColor;
+        lazer.endColor = currentColor;
 
         //hitbox
         startpoint = lazer.GetPosition(0);
@@ -101,12 +122,38 @@ public class beholder : MonoBehaviour
     IEnumerator AttackPlayer()
     {
         lazer.enabled = false;
+        //System.Random random = new System.Random();
         while(true)
         {
+            //random eye based on side
+            if(player.transform.position.x < transform.position.x)
+            {
+                firepoint = eyes[UnityEngine.Random.Range(0, 6)];//0-5
+            }
+            else
+            {
+                firepoint = eyes[UnityEngine.Random.Range(5, 11)];//5-10
+            }
+
+            //random color
+            currentColor = colors[UnityEngine.Random.Range(0, 3)];
+
             yield return new WaitForSeconds(shootDelay);
-            lazer.SetPosition(0, new Vector3(firepoint.position.x, firepoint.position.y, -3));
-            lazer.SetPosition(1, new Vector3(player.transform.position.x, player.transform.position.y, -3));
+            lazer.SetPosition(0, new Vector3(firepoint.position.x, firepoint.position.y, zPos));
+            lazer.SetPosition(1, new Vector3(player.transform.position.x, player.transform.position.y, zPos));
             StartCoroutine(LazerOn());
+        }
+    }
+
+    void GetEyes(Transform[] eyes)
+    {
+        for(int i = 0; i < 11; i++)
+        {
+            eyes[i] = transform.Find("firepoint" + (i + 1));
+            if(eyes[i] == null)
+            {
+                Debug.LogError("firepoint" + i + " not found in the children of the GameObject.");
+            }
         }
     }
 }

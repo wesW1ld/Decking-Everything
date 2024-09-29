@@ -24,6 +24,9 @@ public class Movement : MonoBehaviour
     private float jumpBufferTime = 0.15f; // Time before hitting the ground that the player can jump.
     private float jumpBufferCounter;
 
+    //revserse controls
+    public bool reverseControls = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +53,11 @@ public class Movement : MonoBehaviour
     //FixedUpdate is called at a fixed interval and is used for physics calculations
     private void FixedUpdate() 
     {
+        if(reverseControls)
+        {
+            horizontalMove = -horizontalMove;
+        }
+
         //sprite movement
         if(horizontalMove < 0)
         {
