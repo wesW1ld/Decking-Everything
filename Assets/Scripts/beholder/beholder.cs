@@ -19,6 +19,7 @@ public class beholder : MonoBehaviour
     public float lazerDuration = 1f;
     private LineRenderer lazer;
     public float shootDelay = 3f;
+    public float range = 10f;
 
     //hitbox of line
     GameObject hitbox;
@@ -149,7 +150,10 @@ public class beholder : MonoBehaviour
 
             lazer.SetPosition(0, new Vector3(firepoint.position.x, firepoint.position.y, zPos));
             lazer.SetPosition(1, new Vector3(player.transform.position.x, player.transform.position.y, zPos));
-            StartCoroutine(LazerOn());
+            if(Mathf.Abs(lazer.GetPosition(1).x - lazer.GetPosition(0).x) < range)
+            {
+                StartCoroutine(LazerOn());
+            }
         }
     }
 

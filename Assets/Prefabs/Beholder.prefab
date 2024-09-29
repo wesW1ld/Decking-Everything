@@ -247,6 +247,7 @@ MonoBehaviour:
   currentColor: {r: 0, g: 0, b: 0, a: 0}
   lazerDuration: 1
   shootDelay: 3
+  range: 25
   width: 0.5
   prefabHitbox: {fileID: 4482258775935948379, guid: 6e4e2a7c591775e4cb32e239836ca279, type: 3}
   zPos: -5
