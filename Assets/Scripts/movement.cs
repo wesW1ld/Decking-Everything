@@ -24,8 +24,9 @@ public class Movement : MonoBehaviour
     private float jumpBufferTime = 0.15f; // Time before hitting the ground that the player can jump.
     private float jumpBufferCounter;
 
-    //revserse controls
+    //revserse controls and oushback
     public bool reverseControls = false;
+    public bool pushback = false;
 
     // Start is called before the first frame update
     void Start()
@@ -69,7 +70,10 @@ public class Movement : MonoBehaviour
         }
 
         ///player movement
-        rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
+        if(!pushback)
+        {
+            rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
+        }
     }
 
     private void Jump()

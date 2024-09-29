@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7988883528011030565}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: firepoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7247292892761093856}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: firepoint6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8078615935805682176}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: firepoint7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1266187224084620343}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: firepoint9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2752355479242767069}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: firepoint11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,8 @@ GameObject:
   - component: {fileID: 2925662408506711354}
   - component: {fileID: 435258932165521099}
   - component: {fileID: 1237342386192584476}
-  m_Layer: 0
+  - component: {fileID: 3209456174684095124}
+  m_Layer: 7
   m_Name: Beholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,10 +243,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e918d15e1331a604880ce5641a852df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 5
+  currentColor: {r: 0, g: 0, b: 0, a: 0}
   lazerDuration: 1
   shootDelay: 3
   width: 0.5
   prefabHitbox: {fileID: 4482258775935948379, guid: 6e4e2a7c591775e4cb32e239836ca279, type: 3}
+  zPos: -5
 --- !u!114 &2925662408506711354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,12 +396,26 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.70554924, y: 0.7990315}
   serializedVersion: 2
   m_Radius: 1.8
+--- !u!114 &3209456174684095124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3821788072456767235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34fd43270da625848b798ac99f080d91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 15
+  pushDuration: 0.2
 --- !u!1 &4266225347092876282
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8982564085598048940}
   - component: {fileID: 2882584518311760761}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Beholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +509,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4604365723520917487}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: firepoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5990840688410822829}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: firepoint10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8242088247941323466}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: firepoint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +602,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 915550789758438851}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: firepoint8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +633,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5644478398644505610}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: firepoint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -646,7 +664,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2977266372796683020}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: firepoint5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
