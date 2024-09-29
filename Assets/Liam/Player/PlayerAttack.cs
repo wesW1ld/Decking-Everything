@@ -24,7 +24,7 @@ public class PlayerAttack : MonoBehaviour
     private Animator animator;
 
     // Attack cooldown.
-    private float timeBetweenAttacks = 0.20f;
+    private float timeBetweenAttacks = 0.95f;
     private float attackTimeCounter;
 
     private void Start()

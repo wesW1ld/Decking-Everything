@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     public float speed; //can be changed in unity editor
     private float horizontalMove;
     private Rigidbody2D rb;
+    private Animator animator;
 
     //jumping
     public bool isGrounded;
@@ -31,13 +32,17 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Set component refs.
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Movement
         horizontalMove = InputManager.instance.moveInput.x;
+        WalkingAnimation();
 
         //player jumping using raycast
         Debug.DrawRay(rayStart, Vector2.down * groundCheckDistance, Color.red); //draws a ray in the scene view for debugging
@@ -111,6 +116,20 @@ public class Movement : MonoBehaviour
         else
         {
             jumpBufferCounter -= Time.deltaTime;
+        }
+    }
+
+    private void WalkingAnimation()
+    {
+        // If there is any horizontal movement, the player is moving.
+        if (horizontalMove != 0)
+        {
+            animator.SetBool("moving", true);
+        }
+        // If there is no horizontal movement, the player is not moving.
+        else
+        {
+            animator.SetBool("moving", false);
         }
     }
 }

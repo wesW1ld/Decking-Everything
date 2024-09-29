@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 4
       width: 96
       height: 86
-    spriteID: 94bc29b25ac33d448bb41a5efbf39c86
+    spriteID: d19aa7acd07060f46a222397b69e388d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -152,7 +152,7 @@ ScriptedImporter:
       y: 4
       width: 95
       height: 83
-    spriteID: 2f7551e2e98536e4cb5ef4e125151109
+    spriteID: b19a6438fc9e44a47b4f3129cbf9c041
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -172,7 +172,7 @@ ScriptedImporter:
       y: 95
       width: 93
       height: 84
-    spriteID: 822a5acce6d83fe4aafaa36c79e21ef9
+    spriteID: aa511d6aabf85a24d97b5cb9b5313017
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -192,7 +192,7 @@ ScriptedImporter:
       y: 98
       width: 96
       height: 86
-    spriteID: 7edd5522c7f040a4f84eae28d4e0bb4b
+    spriteID: 73ceff775bb6e6942a86cd79246eb7eb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -218,7 +218,7 @@ ScriptedImporter:
         y: 2
         width: 96
         height: 86
-      spriteId: 94bc29b25ac33d448bb41a5efbf39c86
+      spriteId: d19aa7acd07060f46a222397b69e388d
     - name: Beholder Idle_Frame_1
       frameIndex: 1
       additiveSortOrder: 0
@@ -227,7 +227,7 @@ ScriptedImporter:
         y: 6
         width: 95
         height: 83
-      spriteId: 2f7551e2e98536e4cb5ef4e125151109
+      spriteId: b19a6438fc9e44a47b4f3129cbf9c041
     - name: Beholder Idle_Frame_2
       frameIndex: 2
       additiveSortOrder: 0
@@ -236,7 +236,7 @@ ScriptedImporter:
         y: 5
         width: 93
         height: 84
-      spriteId: 822a5acce6d83fe4aafaa36c79e21ef9
+      spriteId: aa511d6aabf85a24d97b5cb9b5313017
     - name: Beholder Idle_Frame_3
       frameIndex: 3
       additiveSortOrder: 0
@@ -245,7 +245,7 @@ ScriptedImporter:
         y: 2
         width: 96
         height: 86
-      spriteId: 7edd5522c7f040a4f84eae28d4e0bb4b
+      spriteId: 73ceff775bb6e6942a86cd79246eb7eb
     linkedCells: []
     parentIndex: -1
   platformSettings:
