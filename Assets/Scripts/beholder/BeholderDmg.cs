@@ -8,12 +8,15 @@ public class BeholderDmg : MonoBehaviour, IDamageable
     private float maxHealth = 2f;
     private float currentHealth;
 
+    private GameObject player;
+
     public bool HasTakenDamage { get; set; }
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        player = GameObject.FindWithTag("Player");
     }
 
     public void Damage(float damageAmt)
@@ -24,6 +27,7 @@ public class BeholderDmg : MonoBehaviour, IDamageable
 
         if (currentHealth <= 0)
         {
+            player.GetComponent<Movement>().enabled = true; //fixes pushback bug if boss dies
             Death();
         }
     }

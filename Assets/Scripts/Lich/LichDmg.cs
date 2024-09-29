@@ -8,12 +8,17 @@ public class LichDmg : MonoBehaviour, IDamageable
     private float maxHealth = 3f;
     private float currentHealth;
 
+    LichAttacks lichAttacks;
+    private GameObject player;
+
     public bool HasTakenDamage { get; set; }
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        lichAttacks = GetComponent<LichAttacks>();
+        player = GameObject.FindWithTag("Player");
     }
 
     public void Damage(float damageAmt)
@@ -21,9 +26,13 @@ public class LichDmg : MonoBehaviour, IDamageable
         HasTakenDamage = true;
 
         currentHealth -= damageAmt;
+        Debug.Log("Lich hit");
+
+        lichAttacks.attackNum += 1;
 
         if (currentHealth <= 0)
         {
+            player.GetComponent<Movement>().enabled = true; //fixes pushback bug if boss dies
             Death();
         }
     }
