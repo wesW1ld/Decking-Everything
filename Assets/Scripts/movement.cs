@@ -67,6 +67,11 @@ public class Movement : MonoBehaviour
 
         // Checks if player has fallen off the map.
         RespawnBoundary();
+
+        if (reverseControls)
+        {
+            horizontalMove = -horizontalMove;
+        }
     }
 
     //FixedUpdate is called at a fixed interval and is used for physics calculations
